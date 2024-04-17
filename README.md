@@ -1,5 +1,5 @@
 # このリポジトリについて
-Introduction to Algorismsで学んだアルゴリズムのプログラムを置いていきます。
+Introduction to Algorismsで学んだアルゴリズムのプログラムを実装し、置いていきます。
 
 基本的にC++での実装になります。
 # 24-04-17
