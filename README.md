@@ -3,6 +3,6 @@ Introduction to Algorismsで学んだアルゴリズムのプログラムを実�
 
 基本的にC++での実装になります。
 # 24-04-17
-○挿入ソート(insertion_sort.cpp)を追加。
+○挿入ソート(insertion_sort.cpp)を追加しました。
 
-・疑似コードでは1-indexedだったが、0-indexedとして実装。
+・疑似コードでは1-indexedでしたが、0-indexedとして実装しました。
