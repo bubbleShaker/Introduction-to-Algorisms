@@ -11,4 +11,4 @@ Introduction to Algorismsで学んだアルゴリズムのプログラムを実�
 # 24-04-28
 ○find_maximum_subarray.cppを追加しました。
 
-○square_matrix_multiply_recursive.cpp
+○square_matrix_multiply_recursive.cppを追加しました。
