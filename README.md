@@ -14,3 +14,5 @@ Introduction to Algorismsで学んだアルゴリズムのプログラムを実�
 ○square_matrix_multiply_recursive.cppを追加しました。
 
 ○strassens_method.cppを追加しました。
+# 24-04-30
+○permute_by_sorting.cppを追加しました。
