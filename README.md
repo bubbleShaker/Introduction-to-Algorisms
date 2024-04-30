@@ -19,3 +19,5 @@ Introduction to Algorismsで学んだアルゴリズムのプログラムを実�
 ○Chapter5/randomize_in_place.cppを追加しました。
 
 ○Chapter5/random_sample.cppを追加しました。
+## 24-05-01
+○Chapter6/max_heapify.cppを追加しました。
