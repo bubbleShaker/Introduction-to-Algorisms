@@ -34,7 +34,7 @@ int main() {
     int d=2;
     a=RADIX_SORT(a,d);
     for(int i=0;i<n;i++){
-        cout<<a[i]<<" \n"[i==n];
+        cout<<a[i]<<" \n"[i+1==n];
     }
     return 0;
 }
