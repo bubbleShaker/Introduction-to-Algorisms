@@ -2,10 +2,10 @@
 using namespace std;
 template<typename T>
 class Heap {
-    private:
+private:
     vector<int> A;
     int size;
-    public:
+public:
     Heap():size(0) {}
     Heap(vector<int> vec):A(vec) {
         size=vec.size();
