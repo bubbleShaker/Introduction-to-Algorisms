@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int PERTITION(vector<int>& A,int p,int r){
+int PARTITION(vector<int>& A,int p,int r){
     int x=A[r];
     int i=p-1;
     for(int j=p;j<=r-1;j++){
@@ -14,7 +14,7 @@ int PERTITION(vector<int>& A,int p,int r){
 }
 void QUICKSORT(vector<int>& A,int p,int r){
     if(p<r){
-        int q=PERTITION(A,p,r);
+        int q=PARTITION(A,p,r);
         QUICKSORT(A,p,q-1);
         QUICKSORT(A,q+1,r);
     }
