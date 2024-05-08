@@ -21,3 +21,25 @@ Introduction to Algorismsで学んだアルゴリズムのプログラムを実�
 ○Chapter5/random_sample.cppを追加しました。
 ## 24-05-01
 ○Chapter6/max_heapify.cppを追加しました。
+## 24-05-08
+○Chapter6/max_heap_insert.cppを追加しました。
+
+○Chapter6/build_max_heap.cppを追加しました。
+
+○Chapter6/build_min_heap.cppを追加しました。
+
+○Chapter6/heap_increase_key.cppを追加しました。
+
+○Chapter6/heapsort.cppを追加しました。
+
+○Chapter7/partition.cppを追加しました。
+
+○Chapter7/quicksort.cppを追加しました。
+
+○Chapter7/randomized_quicksort.cppを追加しました。
+
+○Chapter8/counting_sort.cppを追加しました。
+
+○Chapter8/radix_sort.cppを追加しました。
+
+○Chapter8/bucket_sort.cppを追加しました。
