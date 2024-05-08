@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-vector<int> INSERTION_SORT(vector<int>& A){
+void INSERTION_SORT(vector<int>& A){
     int n=A.size();
     for(int j=1;j<n;j++){
         int key=A[j];
