@@ -59,8 +59,9 @@ public:
         if(EMPTY()){
             throw invalid_argument("underflow");
         }else{
-            Node<T>* ptr=slist->getHead();
-            slist->LIST_DELETE(ptr);
+            Node<T>* ptr=top;
+            slist->LIST_DELETE(top);
+            top=top->next;
             return ptr->key;
         }
     }
