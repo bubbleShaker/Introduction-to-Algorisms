@@ -52,7 +52,7 @@ int SELECT(vector<int> A,int p,int r,int i){
     vector<int> med(gsize);
     for(int i=0;i<gsize;i++){
         int m=group[i].size();
-        group[i].push_back(-1);
+        group[i].push_back(-1);//-1 is a sentinel
         INSERTION_SORT(group[i]);
         med[i]=group[i][ceili(m,2)];
     }
