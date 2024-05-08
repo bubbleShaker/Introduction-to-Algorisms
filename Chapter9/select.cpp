@@ -60,13 +60,14 @@ int SELECT(vector<int> A,int p,int r,int i){
     med.push_back(-1);//-1 is a sentinel
     reverse(med.begin(),med.end());
     int x=SELECT(med,1,gsize,ceili(gsize,2));
-    int k=PARTITION(A,p,r,x);
+    int q=PARTITION(A,p,r,x);
+    int k=q-p+1;
     if(i==k){
         return x;
     }else if(i<k){
-        return SELECT(A,p,k-1,i);
+        return SELECT(A,p,q-1,i);
     }else{
-        return SELECT(A,k+1,r,i);
+        return SELECT(A,q+1,r,i-k);
     }
 }
 int main() {
