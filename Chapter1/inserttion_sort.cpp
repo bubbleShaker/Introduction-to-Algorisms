@@ -1,17 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
-vector<int> insertion_sort(vector<int> a){
-    int n=a.size();
+vector<int> insertion_sort(vector<int>& A){
+    int n=A.size();
     for(int j=1;j<n;j++){
-        int key=a[j];
+        int key=A[j];
         int i=j-1;
-        while(i>=0&&a[i]>key){
-            a[i+1]=a[i];
+        while(i>=0&&A[i]>key){
+            A[i+1]=A[i];
             i--;
         }
-        a[i+1]=key;
+        A[i+1]=key;
     }
-    return a;
 }
 
 int main() {
