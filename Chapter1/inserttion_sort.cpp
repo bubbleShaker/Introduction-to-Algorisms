@@ -15,7 +15,7 @@ vector<int> INSERTION_SORT(vector<int>& A){
 
 int main() {
     vector<int> a={5,2,4,6,1,3};
-    a=INSERTION_SORT(a);
+    INSERTION_SORT(a);
     int n=a.size();
     for(int i=0;i<n;i++){
         cout<<a[i]<<" \n"[i+1==n];
