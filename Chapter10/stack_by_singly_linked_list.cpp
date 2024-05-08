@@ -83,5 +83,7 @@ int main() {
     stk.print();
     stk.POP();
     stk.print();
+    stk.POP();
+    stk.print();
     return 0;
 }
