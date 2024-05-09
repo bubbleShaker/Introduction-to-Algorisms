@@ -16,25 +16,13 @@ struct XorNode{
 template<typename T>
 class XorDoublyLinkedList {
 private:
-    XorNode<T>* nil;
-    bool initialized;
     XorNode<T>* head;
     XorNode<T>* tail;
 public:
-    void init(){
-        nil=new XorNode<T>;
-        nil->key=-1;
-        nil->np=0;
-    }
-    XorDoublyLinkedList():nil(nullptr),initialized(false),head(0),tail(0) {
-        if(!initialized){
-            init();
-            initialized=true;
-        }
-    }
+    XorDoublyLinkedList():head(0),tail(0) {}
     XorNode<T>* LIST_SEARCH(T k){
         XorNode<T>* ptr=head;
-        XorNode<T>* prevPtr=nil->np;
+        XorNode<T>* prevPtr=0;
         while(ptr!=0&&ptr->key!=k){
             uintptr_t res=xor_pointers(ptr->np,prevPtr);
             XorNode<T>* nextPtr=to_pointer<XorNode<T>>(res);
@@ -61,12 +49,12 @@ public:
     }
     void print(){
         XorNode<T>* ptr=head;
-        XorNode<T>* prevPtr=nil->np;
-        while(ptr!=nil->np){
+        XorNode<T>* prevPtr=0;
+        while(ptr!=0){
             uintptr_t res=xor_pointers(ptr->np,prevPtr);
             XorNode<T>* nextPtr=to_pointer<XorNode<T>>(res);
             prevPtr=ptr;
-            cout<<ptr->key<<((nextPtr!=nil->np)?"->":"\n");
+            cout<<ptr->key<<((nextPtr!=0)?"->":"\n");
             ptr=nextPtr;
         }
     }
