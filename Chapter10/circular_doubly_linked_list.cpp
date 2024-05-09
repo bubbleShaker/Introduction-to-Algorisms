@@ -18,8 +18,9 @@ public:
         nil->next=nil;
     }
     Node<T>* LIST_SEARCH(T k){
+        nil->key=k;
         Node<T>* x=nil->next;
-        while(x!=nil&&x->key!=k){
+        while(x->key!=k){
             x=x->next;
         }
         return x;
@@ -57,6 +58,7 @@ int main() {
     dlist.print();
     dlist.LIST_DELETE(node2);
     dlist.print();
-    cout<<dlist.LIST_SEARCH(9)->key<<endl;;
+    cout<<dlist.LIST_SEARCH(9)->key<<endl;
+    cout<<dlist.LIST_SEARCH(10)->key<<endl;
     return 0;
 }
