@@ -6,12 +6,12 @@ struct Node{
     Node<T>* next;
 };
 template<typename T>
-class SingleList{
+class CircularSinglyLinkedList{
 private:
     Node<T>* head;
     Node<T>* tail;
 public:
-    SingleList():head(nullptr) {}
+    CircularSinglyLinkedList():head(nullptr),tail(nullptr) {}
     void LIST_INSERT(Node<T>* x){
         if(head==nullptr){
             head=x;
@@ -20,38 +20,76 @@ public:
             tail->next=x;
         }
         tail=x;
+        tail->next=head;
     }
-    void LIST_DELETE(Node<T>* x){
+    void SLIST_DELETE(Node<T>* x){
         Node<T>* ptr=head;
-        Node<T>* prevPtr=nullptr;
-        while(ptr!=nullptr&&ptr!=x){
+        Node<T>* prevPtr=tail;
+        while(ptr!=tail&&ptr!=x){
             prevPtr=ptr;
             ptr=ptr->next;
         }
-        if(ptr==x&&prevPtr==nullptr){
-            head=ptr->next;
+        prevPtr->next=ptr->next;
+    }
+    void LIST_DELETE(Node<T>* x){
+        Node<T>* ptr=head;
+        Node<T>* prevPtr=tail;
+        do{
+            prevPtr=ptr;
+            ptr=ptr->next;
+        }while(ptr!=head&&ptr!=x);
+        if(ptr==x&&head==tail){
+            head=tail=nullptr;
+        }else if(ptr==x&&ptr==head){
+            tail->next=x->next;
+            head=x->next;
+        }else if(ptr==x&&ptr==tail){
+            prevPtr->next=head;
+            tail=prevPtr;
         }else if(ptr==x){
             prevPtr->next=ptr->next;
         }
     }
-    void print(){
+    Node<T>* LIST_SEARCH(T k){
         Node<T>* ptr=head;
-        while(ptr!=nullptr){
-            cout<<ptr->key<<((ptr->next!=nullptr)?"->":"\n");
+        while(ptr!=tail&&ptr->key!=k){
             ptr=ptr->next;
         }
+        if(ptr->key!=k){
+            return nullptr;
+        }else{
+            return ptr;
+        }
+    }
+    void print(){
+        Node<T>* ptr=head;
+        if(ptr==nullptr){
+            cout<<"no element"<<endl;
+            return;
+        }
+        do{
+            cout<<ptr->key<<((ptr->next!=head)?"->":"\n");
+            ptr=ptr->next;
+        }while(ptr!=head);
     }
 };
 int main() {
-    SingleList<int> slist;
-    Node<int>* node1=new Node<int>(5,nullptr);
-    Node<int>* node2=new Node<int>(4,nullptr);
-    Node<int>* node3=new Node<int>(1,nullptr);
-    slist.LIST_INSERT(node1);
-    slist.LIST_INSERT(node2);
-    slist.LIST_INSERT(node3);
-    slist.print();
-    slist.LIST_DELETE(node2);
-    slist.print();
+    CircularSinglyLinkedList<int> cslist;
+    Node<int>* node1=new Node<int>(4,nullptr);
+    Node<int>* node2=new Node<int>(1,nullptr);
+    Node<int>* node3=new Node<int>(2,nullptr);
+    Node<int>* node4=new Node<int>(7,nullptr);
+    cslist.LIST_INSERT(node1);
+    cslist.LIST_INSERT(node2);
+    cslist.LIST_INSERT(node3);
+    cslist.print();
+    cslist.LIST_DELETE(node3);
+    cslist.print();
+    cslist.LIST_INSERT(node4);
+    cslist.print();
+    cslist.LIST_DELETE(node1);
+    cslist.print();
+    cout<<((cslist.LIST_SEARCH(4)!=nullptr)?to_string(cslist.LIST_SEARCH(4)->key):"nullptr")<<endl;
+    cout<<((cslist.LIST_SEARCH(7)!=nullptr)?to_string(cslist.LIST_SEARCH(7)->key):"nullptr")<<endl;
     return 0;
 }
