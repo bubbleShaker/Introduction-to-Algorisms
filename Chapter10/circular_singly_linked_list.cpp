@@ -22,15 +22,30 @@ public:
         tail=x;
         tail->next=head;
     }
-    void LIST_DELETE(Node<T>* x){
+    void SLIST_DELETE(Node<T>* x){
         Node<T>* ptr=head;
-        Node<T>* prevPtr=nullptr;
-        while(ptr!=nullptr&&ptr!=x){
+        Node<T>* prevPtr=tail;
+        while(ptr!=tail&&ptr!=x){
             prevPtr=ptr;
             ptr=ptr->next;
         }
-        if(ptr==x&&prevPtr==nullptr){
-            head=ptr->next;
+        prevPtr->next=ptr->next;
+    }
+    void LIST_DELETE(Node<T>* x){
+        Node<T>* ptr=head;
+        Node<T>* prevPtr=tail;
+        do{
+            prevPtr=ptr;
+            ptr=ptr->next;
+        }while(ptr!=head&&ptr!=x);
+        if(ptr==x&&head==tail){
+            head=tail=nullptr;
+        }else if(ptr==x&&ptr==head){
+            tail->next=x->next;
+            head=x->next;
+        }else if(ptr==x&&ptr==tail){
+            prevPtr->next=head;
+            tail=prevPtr;
         }else if(ptr==x){
             prevPtr->next=ptr->next;
         }
@@ -48,7 +63,10 @@ public:
     }
     void print(){
         Node<T>* ptr=head;
-        int cnt=0;
+        if(ptr==nullptr){
+            cout<<"no element"<<endl;
+            return;
+        }
         do{
             cout<<ptr->key<<((ptr->next!=head)?"->":"\n");
             ptr=ptr->next;
@@ -60,11 +78,14 @@ int main() {
     Node<int>* node1=new Node<int>(4,nullptr);
     Node<int>* node2=new Node<int>(1,nullptr);
     Node<int>* node3=new Node<int>(2,nullptr);
+    Node<int>* node4=new Node<int>(7,nullptr);
     cslist.LIST_INSERT(node1);
     cslist.LIST_INSERT(node2);
     cslist.LIST_INSERT(node3);
     cslist.print();
-    cslist.LIST_DELETE(node2);
+    cslist.LIST_INSERT(node4);
+    cslist.print();
+    cslist.LIST_DELETE(node1);
     cslist.print();
     cout<<((cslist.LIST_SEARCH(4)!=nullptr)?to_string(cslist.LIST_SEARCH(4)->key):"nullptr")<<endl;
     cout<<((cslist.LIST_SEARCH(7)!=nullptr)?to_string(cslist.LIST_SEARCH(7)->key):"nullptr")<<endl;
