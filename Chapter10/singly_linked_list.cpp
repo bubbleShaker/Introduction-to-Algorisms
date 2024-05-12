@@ -22,15 +22,6 @@ public:
         tail=x;
         tail->next=head;
     }
-    void SLIST_DELETE(Node<T>* x){
-        Node<T>* ptr=head;
-        Node<T>* prevPtr=tail;
-        while(ptr!=tail&&ptr!=x){
-            prevPtr=ptr;
-            ptr=ptr->next;
-        }
-        prevPtr->next=ptr->next;
-    }
     void LIST_DELETE(Node<T>* x){
         Node<T>* ptr=head;
         Node<T>* prevPtr=tail;
