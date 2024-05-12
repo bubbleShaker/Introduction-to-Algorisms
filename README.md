@@ -52,32 +52,20 @@ Introduction to Algorismsで学んだアルゴリズムのプログラムを実�
 
 ○Chapter9/select.cppを追加しました。
 
-○Chapter10/stack.cppを追加しました。
+○Chapter10/singly_linked_list.cppを追加しました。
 
-○Chapter10/queue.cppを追加しました。
+○Chapter10/circular_singly_linked_list.cppを追加しました。
 
 ○Chapter10/doubly_linked_list.cppを追加しました。
 
 ○Chapter10/circular_doubly_linked_list.cppを追加しました。
 
-○Chapter10/singly_linked_list.cppを追加しました。
+○Chapter10/stack.cppを追加しました。
 
 ○Chapter10/stack_by_singly_linked_list.cppを追加しました。
 
+○Chapter10/queue.cppを追加しました。
+
 ○Chapter10/queue_by_singly_lincked_list.cppを追加しました。
 
-○Chapter10/circular_singly_linked_list.cppを追加しました。
-
-○Chapter10/singly_linked_list_union.cppを追加しました。
-
-○Chapter10/singly_linked_list_reverse.cppを追加しました。
-
-○Chapter10/xor_doubly_linked_list_search.cppを追加しました。
-
-○Chapter10/xor_doubly_linked_list_delete.cppを追加しました。
-
-○Chapter10/xor_doubly_linked_list_reverse.cppを追加しました。
-
-
-
-
+○Chapter10/xor_doubly_linked_list.cppを追加しました。
