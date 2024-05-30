@@ -57,6 +57,9 @@ public:
             prevPtr=ptr;
             ptr=nextPtr;
         }
+        if(ptr==0){
+          return;
+        }
         res=xor_pointers(ptr->np,prevPtr);
         XorNode<T>* nextPtr=to_pointer<XorNode<T>>(res);
         if(ptr==head){
@@ -103,10 +106,9 @@ int main() {
     XorNode<int>* node3=new XorNode<int>(16,0);
     XorNode<int>* node4=new XorNode<int>(9,0);
     xdlist.LIST_INSERT(node1);
-    xdlist.LIST_INSERT(node2);
-    xdlist.LIST_INSERT(node3);
-    xdlist.LIST_INSERT(node4);
     xdlist.print();
-    xdlist.print_reverse();
+    xdlist.LIST_DELETE(node1);
+    xdlist.print();
+    xdlist.LIST_DELETE(node1);
     return 0;
 }
